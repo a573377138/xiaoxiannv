@@ -80,8 +80,9 @@ body{
         width: $pagewidth;
         margin: 0 auto;
         //background: skyblue;
-        height: 1300px;
-        overflow: hidden;
+        //height: auto;
+        //display:inline-block;
+        //overflow: hidden;
         .con-wrapper{
             $bannerwidth:$mainboxwidth;
             $bannerheight:277px;
@@ -271,10 +272,16 @@ body{
 
             .content-zt {
                 margin-top: 10px;
-
+                //margin-bottom: 100px;
+                //background: palevioletred;
+                //display:inline-block;
                 .content-list {
                     margin: 10px 10px;
                     overflow: hidden;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
                         li{
                             width: 300px;
                             height: 350px;
