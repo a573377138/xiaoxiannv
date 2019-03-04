@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.css"/>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.flash.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.html5.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.4.2/js/buttons.print.js"></script>
+</head>
+<body>
+    <table class="display" id="tb">
+            <thead>
+                <tr>
+                    <th>服务器</th>
+                    <th>账号</th>
+                    <th>服务器ID</th>
+                    <th>角色名</th>
+                    <th>任务数</th>
+                    <th>角色ID</th>
+                    <th>标记</th>
+                    <th>充值通宝</th>
+                    <th>充值时间</th>
+                    <th>通宝消耗</th>
+                    <th>外挂标记</th>
+                    <th>角色类型</th>
+                    <th>代练标记</th>
+                    <th>装备分数</th>
+                    <th>精练分数</th>
+                    <th>镶嵌分数</th>
+                    <th>精练等级</th>
+                    <th>镶嵌等级</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+    </table>
+    <input type="button" value="下载" onclick="window.open('/quanliang/','_blank')">
+     <script type="text/javascript">
+           $(document).ready(function () {
+               $("#tb").DataTable({
+                   oLanguage: {
+                       sSearch: "搜索",
+                      sLengthMenu: "每页显示 _MENU_ 条记录",
+                      sInfo: "从 _START_ 到 _END_ /共 _TOTAL_ 条数据",
+                      sInfoEmpty: "没有数据",
+                      sInfoFiltered: "(从 _MAX_ 条数据中检索)",
+                      oPaginate: {
+                        sFirst: "首页",
+                        sPrevious: "前一页",
+                        sNext: "后一页",
+                        sLast: "尾页"
+                      },
+                      sProcessing: "正在加载数据......",
+                      sZeroRecords: "没有检索到数据"
+
+                    },
+                   dom: 'Bflrtip',
+                   scrollCollapse: true,
+                   lengthMenu: [10,20,50],
+                   pageLength: 50,
+                   paging: true,
+                   searching: true,
+                   processing: true,
+                   serverSide: true,
+    //            "destroy": true,
+    //            "pageLength": 10,
+                   ordering: false,
+    //            "renderer": "bootstrap",//渲染样式：Bootstrap和jquery-ui
+    //            "pagingType": "simple_numbers",//分页样式：simple,simple_numbers,full,full_numbers
+    //            "autoWidth": true,
+    //            "stateSave": true,//保持翻页状态，和comTable.fnDraw(false);结合使用
+                   ajax: {
+                        url: "/index/ind",
+                        type: "post",
+                        charset:'utf-8'
+                        {#data:{kssj:'',jssj:''}#}
+                   },
+                {#"columns": [          //若返回的data為字典，需要設置此屬性#}
+                {#   { "data": "dbname" },#}
+                {#   { "data": "accountname" },#}
+                {#   { "data": "rolename" },#}
+                {#   { "data": "renwushu" },#}
+                {#    {"data":"tag"}#}
+                {#]#}
+                {#"columnDefs": [  //欄位渲染#}
+                {#    {#}
+                {#        "render": function (data, type, row) { //data:本欄位內容 row:本行內容#}
+                {#            if (data == "10.199.50.125") {#}
+                {#                return "<span style='color: red'>" + data + "</span>";#}
+                {#            } else {#}
+                {#                return data;#}
+                {#            }#}
+                {#        },#}
+                {#        "targets": 0 //指定渲染列#}
+                {#    },#}
+                {#    {#}
+                {#        "render": function (data, type, row) {#}
+                {#            if (row[0] == "10.199.50.139") {  //根據IP設置本欄位顏色#}
+                {#                return "<span style='color: #adff2f'>" + data + "</span>";#}
+                {#            } else {#}
+                {#                return data;#}
+                {#            }#}
+                {#        },#}
+                {#        "targets": 1 //指定渲染列#}
+                {#    }#}
+                {#]#}
+
+            });
+        });
+    </script>
+</body>
+</html>

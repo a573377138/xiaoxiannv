@@ -1,0 +1,183 @@
+{% extends 'bese.html' %}
+{% block context %}
+    <div class="table-a">
+        <table cellspacing="1" cellpadding="0" id="dis">
+            <thead>
+            <tr>
+{#                {% for foo in title %}#}
+{#                    <th>{{ foo }}</th>#}
+{#                {% endfor %}#}
+                <td>服务器</td>
+                <td>账号</td>
+                <td>服务器ID</td>
+                <td>角色名</td>
+                <td>角色ID</td>
+                <td>UUID</td>
+                <td>MAC地址</td>
+                <td>登录次数</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for da in deta %}
+                <tr>
+                    <td>{{ da.0 }}</td>
+                    <td>{{ da.1 }}</td>
+                    <td>{{ da.2 }}</td>
+                    <td>{{ da.3 }}</td>
+                    <td>{{ da.4 }}</td>
+                    <td>{{ da.5 }}</td>
+                    <td>{{ da.6 }}</td>
+                    <td>{{ da.7 }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+{#        <button type="button" onclick="method5('dis')">导出Excel</button>#}
+        <input type="submit" value="返回上一页" onclick="location.href='/denglu/'" id="fanhui" width="80px" height="30px">
+    </div>
+{#    <div>#}
+{#        <input type="submit" value="返回上一页" onclick="location.href='/denglu/'" id="fanhui" width="80px" height="30px">#}
+{#    </div>#}
+{#    <div>#}
+{#        <p><a href="output/" target="_blank">导出csv</a></p>#}
+{#        <input type="button" value="Excle导出" onclick="window.open('/output/','_blank')" height="50" width="80">#}
+{#        <input type="button" value="Excle导出"  height="50" width="80" class="dc">#}
+{#    </div>#}
+
+{#$(document).ready(function(){#}
+{#  $("#dc").click(function() {#}
+{#      $('#dis').DataTable({#}
+{#          buttons: [#}
+{#              {#}
+{#                  extend: 'excel',//使用 excel扩展#}
+{#                  text: '导出本页',// 显示文字#}
+{#                  filename: '登录数据.xlsx',#}
+{#                  exportOptions: {#}
+{#                      #}
+{#                  }#}
+{#              }#}
+{#          ]#}
+{#      });#}
+{#  });#}
+{#$('#myTable').DataTable( {#}
+{#    buttons: [#}
+{#        {#}
+{#            extend: 'excel',#}
+{#            text: '导出本页',#}
+{#            className:'dc',#}
+{#            exportOptions: {#}
+{#                columns:[0,1,2,3,4]#}
+{#            }#}
+{#        }#}
+{#    ]#}
+<script language="JavaScript" type="text/javascript">
+    var idTmr;
+        function  getExplorer() {
+            var explorer = window.navigator.userAgent ;
+            //ie
+            if (explorer.indexOf("MSIE") >= 0) {
+                return 'ie';
+            }
+            //firefox
+            else if (explorer.indexOf("Firefox") >= 0) {
+                return 'Firefox';
+            }
+            //Chrome
+            else if(explorer.indexOf("Chrome") >= 0){
+                return 'Chrome';
+            }
+            //Opera
+            else if(explorer.indexOf("Opera") >= 0){
+                return 'Opera';
+            }
+            //Safari
+            else if(explorer.indexOf("Safari") >= 0){
+                return 'Safari';
+            }
+        }
+        function method5(tableid) {
+            if(getExplorer()=='ie')
+            {
+                var curTbl = document.getElementById(tableid);
+                var oXL = new ActiveXObject("Excel.Application");
+                var oWB = oXL.Workbooks.Add();
+                var xlsheet = oWB.Worksheets(1);
+                var sel = document.body.createTextRange();
+                sel.moveToElementText(curTbl);
+                sel.select();
+                sel.execCommand("Copy");
+                xlsheet.Paste();
+                oXL.Visible = true;
+
+                try {
+                    var fname = oXL.Application.GetSaveAsFilename("Excel.xlsx", "Excel Spreadsheets (*.xlsx), *.xlsx");
+                } catch (e) {
+                    print("Nested catch caught " + e);
+                } finally {
+                    oWB.SaveAs(fname);
+                    oWB.Close(savechanges = false);
+                    oXL.Quit();
+                    oXL = null;
+                    idTmr = window.setInterval("Cleanup();", 1);
+                }
+
+            }
+            else
+            {
+                tableToExcel(tableid)
+            }
+        }
+        function Cleanup() {
+            window.clearInterval(idTmr);
+            CollectGarbage();
+        }
+        var tableToExcel = (function() {
+            var uri = 'data:application/vnd.ms-excel;base64,',
+                    template = '<html><head><meta charset="UTF-8"></head><body><table>{table}</table></body></html>',
+                    base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) },
+                    format = function(s, c) {
+                        return s.replace(/{(\w+)}/g,
+                                function(m, p) { return c[p]; }) }
+            return function(table, name) {
+                if (!table.nodeType) table = document.getElementById(table)
+                var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+                window.location.href = uri + base64(format(template, ctx))
+            }
+        })()
+</script>
+<script type="text/javascript">
+     $(document).ready(function() {
+         $('#dis').DataTable({
+                 oLanguage: {
+                  sSearch: "搜索",
+                  sLengthMenu: "每页显示 _MENU_ 条记录",
+                  sInfo: "从 _START_ 到 _END_ /共 _TOTAL_ 条数据",
+                  sInfoEmpty: "没有数据",
+                  sInfoFiltered: "(从 _MAX_ 条数据中检索)",
+                  oPaginate: {
+                    sFirst: "首页",
+                    sPrevious: "前一页",
+                    sNext: "后一页",
+                    sLast: "尾页"
+                  },
+                  sProcessing: "正在加载数据......",
+                  sZeroRecords: "没有检索到数据"
+
+                },
+             dom: 'Bfrtip',
+             {#"lengthMenu": [3,5,10],#}
+             pageLength: 20,
+             buttons: [
+                 {
+                     extend: 'excelHtml5',//使用 excel扩展
+                     text: '导出数据',// 显示文字
+                     className: 'btn btn-primary',
+                     filename:'denglu.xlsx',
+                     exportOptions: {
+                     }
+                 }
+             ]
+         })
+     });
+ </script>
+{% endblock %}

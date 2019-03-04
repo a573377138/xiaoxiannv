@@ -1,0 +1,99 @@
+{% extends 'bese.html' %}
+{% block context %}
+{#  <link rel="stylesheet" href="jqueryui/style.css">#}
+
+<script type="text/javascript">
+  $(function() {
+      $("#datepicker3").datetimepicker({
+          format: 'yyyy-mm-dd hh:ii',
+          todayBtn: true,
+          autoclose: true,
+          clearBtn: true
+      });
+  });
+  $(function() {
+      $( "#datepicker4" ).datetimepicker({
+          format: 'yyyy-mm-dd hh:ii',
+          todayBtn: true,
+          autoclose: true,
+          clearBtn:true
+    });
+  });
+  </script>
+    <script>
+function tanchuang(){
+	alert("正在为您寻找数据，请稍后！。。。");
+}
+    </script>
+</head>
+<body>
+
+{#<ul class="fbbiaodan">#}
+{#    <li>开始时间：<input type="text" id="datepicker" name="kssj">#}
+{#    <li>结束时间：<input type="text" id="datepicker1" name="jssj">#}
+{#    <br>#}
+{#    <input type="submit" value="提交" id="tijiaofb">#}
+{#</ul>#}
+    <form class="rwbiaodan" action="" method="post">
+        <table>
+            <thead><h>按日期查询</h></thead>
+            <tbody>
+                <tr>
+                    <td>开始日期：</td>
+                    <td><input type="text" name="kssj" id="datepicker"></td>
+                </tr>
+                <tr>
+                    <td>结束日期：</td>
+                    <td><input type="text" name="jssj" id="datepicker1"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="提交" id="tijiaorw" onclick="tanchuang()"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <form class="rwbiaodantime" action="" method="post">
+        <table>
+            <thead><h>按时间查询(未实装)</h></thead>
+            <tbody>
+                <tr>
+                    <td>开始时间：</td>
+                    <td><input type="text" name="jssj" id="datepicker3"></td>
+                </tr>
+                <tr>
+                    <td>结束时间：</td>
+                    <td><input type="text" name="jssj" id="datepicker4"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="提交" id="tijiaorwtime" onclick="tanchuang()"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <div class="wg">
+        <object type="application/x-shockwave-flash" style="outline:none;" data="http://cdn.abowman.com/widgets/turtles/turtle.swf?" width="1900" height="950"><param name="movie" value="http://cdn.abowman.com/widgets/turtles/turtle.swf?"></param><param name="AllowScriptAccess" value="always"></param><param name="wmode" value="opaque"></param><param name="scale" value="noscale"/><param name="salign" value="tl"/></object>
+    </div>
+</body>
+<script type="text/javascript">
+   $(function() {
+    $( "#datepicker" ).datepicker({
+        dateFormat: 'yy-mm-dd',
+        showOn: "button",
+        buttonText: "日历",
+        changeMonth: true,
+        changeYear: true
+    });
+  });
+  $(function() {
+    $( "#datepicker1" ).datepicker({
+        dateFormat: 'yy-mm-dd',
+        showOn: "button",
+        buttonText: "日历",
+        changeMonth: true,
+        changeYear: true
+    });
+  });
+</script>
+{% endblock %}

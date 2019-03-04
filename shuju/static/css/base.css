@@ -1,0 +1,206 @@
+.nav{
+    background: darkcyan;
+    height: 65px;
+    margin: 0;
+    padding:0;
+}
+.nav li{
+    float: left;
+    margin: 0 20px;
+    list-style: none;
+    padding: 20px 20px 15px;
+}
+.nav li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: orangered;
+}
+.nav li a:hover{
+    color: darkviolet;
+}
+
+.table-a{
+    border-bottom: 5px;
+    margin:5px;
+    padding: 5px 5px;
+
+}
+.table-a td{
+    border:1px solid #444466;
+}
+#denglu{
+    width: 250px;
+    height: 105px;
+    align-content: stretch;
+    margin: 20px 800px 20px;
+}
+#fanhui{
+    margin: 3px 5px ;
+}
+.rwbiaodan{
+    width: 300px;
+    height: 105px;
+    align-content: stretch;
+    margin: 20px 800px 20px;
+}
+.rwbiaodantime{
+    position: absolute;
+    width: 300px;
+    height: 105px;
+    align-content: stretch;
+    margin: 20px 500px 20px;
+    top: 64px;
+}
+.drwbiaodantime{
+    width: 300px;
+    height: 105px;
+    align-content: stretch;
+    margin: 20px 800px 20px;
+}
+.fbbiaodantime {
+    position: absolute;
+    width: 300px;
+    height: 105px;
+    align-content: stretch;
+    margin: 20px 500px 20px;
+    top: 64px;
+}
+.dybiaodantime{
+    position: absolute;
+    width: 300px;
+    height: 105px;
+    align-content: stretch;
+    margin: 20px 500px 20px;
+    top: 64px;
+}
+.hzbiaodantime{
+    position: absolute;
+    width: 300px;
+    height: 105px;
+    align-content: stretch;
+    margin: 20px 500px 20px;
+    top: 64px;
+}
+#tijiaorw{
+    width: 80px;
+    height: 20px;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+#tijiaorwtime{
+    width: 80px;
+    height: 20px;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+#tijiaodrwtime{
+    width: 80px;
+    height: 20px;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+#tijiaohztime{
+    width: 80px;
+    height: 20px;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+#tijiaodytime{
+    width: 80px;
+    height: 20px;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+#tijiaofbtime{
+    width: 80px;
+    height: 20px;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+.fbbiaodan{
+    width: 300px;
+    height: 105px;
+    align-content: stretch;
+    margin: 20px 800px 20px;
+}
+#tijiaofb{
+    width: 80px;
+    height: 20px;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+.hzbiaodan{
+    width: 300px;
+    height: 105px;
+    align-content: stretch;
+    margin: 20px 800px 20px;
+}
+#tijiaohz{
+    width: 80px;
+    height: 20px;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+.dybiaodan{
+    width: 300px;
+    height: 105px;
+    align-content: stretch;
+    margin: 20px 800px 20px;
+}
+#tijiaody{
+    width: 80px;
+    height: 20px;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+.dlbiaodan{
+    width: 370px;
+    height: 180px;
+    align-content: stretch;
+    margin: 20px 800px 20px;
+}
+.dlbiaodan tr{
+    padding: 5px 20px;
+}
+#tijiao{
+    width: 80px;
+    height: 20px;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+.qie object{
+    position:absolute;
+    top: 230px;
+}
+.hz object{
+    position:absolute;
+    top: 200px;
+}
+.dy object{
+    position:absolute;
+    z-index: -1;
+    top: 45px;
+}
+.huany{
+    margin: 50px 550px;
+    font-size: 50px;
+    font-weight: bold;
+    color: pink
+}
+.wg object{
+    position:absolute;
+    top: 50px;
+    z-index: -1;
+}
+#rwdc{
+    margin: 10px 10px 10px 10px;
+}
+#fbdc{
+    margin: 10px 10px 10px 10px;
+}
+#hzdc{
+    margin: 10px 10px 10px 10px;
+}
+#dydc{
+    margin: 10px 10px 10px 10px;
+}

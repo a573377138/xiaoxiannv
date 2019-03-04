@@ -1,0 +1,106 @@
+{% extends 'bese.html' %}
+{% block context %}
+    <div class="table-r">
+        <table border="1" id="rwdc">
+            <thead>
+            <tr>
+{#                {% for ke in shuju.1.keys %}#}
+{#                    <td>{{ ke }}</td>#}
+{#                {% endfor %}#}
+                <th>服务器</th>
+                <th>账号</th>
+                <th>服务器ID</th>
+                <th>角色名</th>
+                <th>任务数</th>
+                <th>角色ID</th>
+                <th>标记</th>
+                <th>充值通宝</th>
+                <th>充值时间</th>
+                <th>通宝消耗</th>
+                <th>装备分数</th>
+                <th>精练分数</th>
+                <th>镶嵌分数</th>
+                <th>精练等级</th>
+                <th>镶嵌等级</th>
+                <th>序列</th>
+            </tr>
+            </thead>
+            <tbody>
+{#            {% for da in data1 %}#}
+{#                <tr>#}
+{#                    <td>{{ da.0 }}</td>#}
+{#                    <td>{{ da.2 }}</td>#}
+{#                    <td>{{ da.3 }}</td>#}
+{#                    <td>{{ da.4 }}</td>#}
+{#                    <td>{{ da.5 }}</td>#}
+{#                    <td>{{ da.6 }}</td>#}
+{#                    <td>{{ da.7 }}</td>#}
+{#                    <td>{{ da.8 }}</td>#}
+{#                    <td>{{ da.9 }}</td>#}
+{#                    <td>{{ da.10 }}</td>#}
+{#                    <td>{{ da.11 }}</td>#}
+{#                    <td>{{ da.12 }}</td>#}
+{#                    <td>{{ da.13 }}</td>#}
+{#                    <td>{{ da.14 }}</td>#}
+{#                    <td>{{ da.15 }}</td>#}
+{#                    <td>{{ da.16 }}</td>#}
+{#                    <td>{{ da.17 }}</td>#}
+{#                    <td>{{ da.18 }}</td>#}
+{#                    <td>{{ da.19 }}</td>#}
+{#                </tr>#}
+{#            {% endfor %}#}
+            </tbody>
+        </table>
+    </div>
+    <input type="submit" value="返回查询页" onclick="location.href='/dangrirw/'" id="fanhuirw" width="80px" height="30px">
+    <input type="button" value="下载数据" onclick="window.open('/drrenwudaochu/','_blank')">
+    <script type="text/javascript">
+     $(document).ready(function(){
+         var mydate = new Date();
+         var t=mydate.toLocaleDateString();
+         $('#rwdc').DataTable({
+             oLanguage: {
+                  sSearch: "搜索",
+                  sLengthMenu: "每页显示 _MENU_ 条记录",
+                  sInfo: "从 _START_ 到 _END_ /共 _TOTAL_ 条数据",
+                  sInfoEmpty: "没有数据",
+                  sInfoFiltered: "(从 _MAX_ 条数据中检索)",
+                  oPaginate: {
+                    sFirst: "首页",
+                    sPrevious: "前一页",
+                    sNext: "后一页",
+                    sLast: "尾页"
+                  },
+                  sProcessing: "正在加载数据......",
+                  sZeroRecords: "没有检索到数据"
+
+                },
+             dom: 'Bflrtip',
+             scrollCollapse: true,
+             lengthMenu: [10,20,50],
+             pageLength: 20,
+             paging: true,
+             searching: true,
+             serverSide: true,
+             processing: true,
+             ordering: true,
+             ajax: {
+                 url: "drrenwuxq/",
+                 type: "post"
+             },
+
+             {#buttons: [#}
+             {#    {#}
+             {#        extend: 'excelHtml5',//使用 excel扩展#}
+             {#        text: '导出本页',// 显示文字#}
+             {#        className: 'btn btn-primary',#}
+             {#        filename:t+'数据',#}
+             {#        exportOptions: {#}
+             {#        }#}
+             {#    }#}
+             {#]#}
+         })
+     });
+    </script>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'bese.html' %}
+{% block context %}
+{#    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">#}
+{#    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">#}
+{#    <link rel="stylesheet" type="text/css" media="screen" href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">#}
+{#    <script type="text/javascript" src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
+{#    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>#}
+{#    <script type="text/javascript" src="https://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>#}
+{#    <script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-datetimepicker/2.1.30/js/bootstrap-datetimepicker.min.js"></script>#}
+{#    <script type="text/javascript" src="https://cdn.bootcss.com/bootstrap-datetimepicker/2.1.30/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>#}
+{#    <script src="../static/js/bootstrap-datetimepicker.min.js"></script>#}
+{#    <script src="../static/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>#}
+{#    <script src="../static/js/bootstrap.min.js"></script>#}
+
+<script type="text/javascript">
+  $(function() {
+    $( "#datepicker" ).datepicker({
+        dateFormat: 'yy-mm-dd',
+        showOn: "button",
+        buttonText: "日历",
+        changeMonth: true,
+        changeYear: true
+    });
+  });
+  $(function() {
+    $( "#datepicker1" ).datepicker({
+        dateFormat: 'yy-mm-dd',
+        showOn: "button",
+        buttonText: "日历",
+        changeMonth: true,
+        changeYear: true
+    });
+  });
+    </script>
+
+
+
+<body>
+
+{#<ul class="fbbiaodan">#}
+{#    <li>开始时间：<input type="text" id="datepicker" name="kssj">#}
+{#    <li>结束时间：<input type="text" id="datepicker1" name="jssj">#}
+{#    <br>#}
+{#    <input type="submit" value="提交" id="tijiaofb">#}
+{#</ul>#}
+    <script>
+function tanchuang(){
+	alert("小企鹅正在为您寻找数据，请稍后！\n等待小企鹅消失。。。");
+}
+    </script>
+    <form class="dlbiaodan" action="" method="post">
+        <table>
+            <tbody>
+                <tr>
+                    <td>UUID：</td>
+                    <td><input type="text" name="uu"></td>
+                </tr>
+                <tr>
+                    <td>开始时间：</td>
+                    <td><input type="text" name="kssj" id="datepicker"></td>
+                </tr>
+                <tr>
+                    <td>结束时间：</td>
+                    <td><input type="text" name="jssj" id="datepicker1"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="提交" id="tijiao" onclick="tanchuang()"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <div class="qie">
+        <object type="application/x-shockwave-flash" style="outline:none;" data="http://cdn.abowman.com/widgets/penguins/penguins.swf?" width="1900" height="800"><param name="movie" value="http://cdn.abowman.com/widgets/penguins/penguins.swf?"></param><param name="AllowScriptAccess" value="always"></param><param name="wmode" value="opaque"></param><param name="scale" value="noscale"/><param name="salign" value="tl"/><param name="Loop" value="-1"></object>
+    </div>
+</body>
+{% endblock %}

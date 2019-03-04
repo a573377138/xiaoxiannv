@@ -1,0 +1,94 @@
+{% extends 'bese.html' %}
+{% block context %}
+    <div class="table-b">
+        <table border="1" id="fbdc">
+            <thead>
+            <tr>
+                <th>服务器名</th>
+                <th>服务器ID</th>
+                <th>账号</th>
+                <th>角色</th>
+                <th>角色ID</th>
+                <th>次数</th>
+                <th>标记</th>
+                <th>充值通宝</th>
+                <th>充值时间</th>
+                <th>通宝消耗</th>
+                <th>外挂标记</th>
+                <th>上周在线时长</th>
+                <th>角色属性</th>
+                <th>代练标记</th>
+                <th>装备分数</th>
+                <th>最大精练</th>
+                <th>最大镶嵌</th>
+                <th>精练等级</th>
+                <th>镶嵌等级</th>
+                <th>副本</th>
+                <th>序列</th>
+            </tr>
+            </thead>
+            <tbody>
+{#            {% for da in data %}#}
+{#                <tr>#}
+{#                    <td>{{ da.0 }}</td>#}
+{#                    <td>{{ da.2 }}</td>#}
+{#                    <td>{{ da.3 }}</td>#}
+{#                    <td>{{ da.4 }}</td>#}
+{#                    <td>{{ da.7 }}</td>#}
+{#                    <td>{{ da.8 }}</td>#}
+{#                    <td>{{ da.9 }}</td>#}
+{#                    <td>{{ da.10 }}</td>#}
+{#                    <td>{{ da.11 }}</td>#}
+{#                    <td>{{ da.12 }}</td>#}
+{#                    <td>{{ da.13 }}</td>#}
+{#                    <td>{{ da.14 }}</td>#}
+{#                    <td>{{ da.15 }}</td>#}
+{#                    <td>{{ da.16 }}</td>#}
+{#                    <td>{{ da.17 }}</td>#}
+{#                    <td>{{ da.18 }}</td>#}
+{#                    <td>{{ da.19 }}</td>#}
+{#                    <td>{{ da.20 }}</td>#}
+{#                    <td>{{ da.21 }}</td>#}
+{#                </tr>#}
+{#            {% endfor %}#}
+            </tbody>
+        </table>
+    </div>
+    <input type="submit" value="返回查询页" onclick="location.href='/fuben/'" id="fanhuifb" width="80px" height="30px">
+    <input type="button" value="下载数据" onclick="window.open('/fubendaochu/','_blank')">
+   <script type="text/javascript">
+    $(document).ready(function(){
+          $('#fbdc').DataTable({
+             oLanguage: {
+                  sSearch: "搜索",
+                  sLengthMenu: "每页显示 _MENU_ 条记录",
+                  sInfo: "从 _START_ 到 _END_ /共 _TOTAL_ 条数据",
+                  sInfoEmpty: "没有数据",
+                  sInfoFiltered: "(从 _MAX_ 条数据中检索)",
+                  oPaginate: {
+                    sFirst: "首页",
+                    sPrevious: "前一页",
+                    sNext: "后一页",
+                    sLast: "尾页"
+                  },
+                  sProcessing: "正在加载数据......",
+                  sZeroRecords: "没有检索到数据"
+
+                },
+             dom: 'Bflrtip',
+             scrollCollapse: true,
+             lengthMenu: [10,20,50],
+             pageLength: 20,
+             paging: true,
+             searching: true,
+             serverSide: true,
+             processing: true,
+             ordering: false,
+             ajax: {
+                 url: "fubenxq/",
+                 type: "post"
+             },
+         })
+     });
+    </script>
+{% endblock %}
