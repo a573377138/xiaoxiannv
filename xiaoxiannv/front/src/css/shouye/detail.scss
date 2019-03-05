@@ -1,0 +1,16 @@
+@import "../besecss/init.scss";
+@import "../besecss/changliang.scss";
+@import "../besecss/footer.scss";
+@import "../besecss/header.scss";
+@import "../besecss/body.scss";
+
+.main{
+  .wrapper{
+    .wrapper-detail{
+        background: cadetblue;
+        width: $mainboxwidth;
+        //height: 1000px;
+        float: left;
+      }
+  }
+}
