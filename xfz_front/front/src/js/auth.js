@@ -51,6 +51,7 @@ Auth.prototype.listenShowHideEvent = function(){
     var signinBtn =$('.signin-btn');
     var signupBtn =$('.signup-btn');
     var closeBtn =$('.close-btn');
+    var uwserV=$('.form-control');
 
     signinBtn.click(function () {
         self.showEvent();
@@ -62,6 +63,9 @@ Auth.prototype.listenShowHideEvent = function(){
     });
     closeBtn.click(function () {
        self.hideEvent();
+       uwserV.reset();
+       // uwserV.set(null);
+       //  document.getElementById("password").reset()
     });
 };
 
@@ -81,6 +85,7 @@ Auth.prototype.listenswitchEvent = function(){
 
 Auth.prototype.listenSigninEvent= function(){
     var self = this;
+    // var closeBtn =$('.close-btn');
     var signinGroup = $('.signin-group');
     var telephoneInput = signinGroup.find("input[name='telephone']");
     var passwordInput= signinGroup.find("input[name='password']");
@@ -92,7 +97,6 @@ Auth.prototype.listenSigninEvent= function(){
         var password = passwordInput.val();
         var remember= rememberInput.prop("checked");
 
-
         xfzajax.post({
             'url':'/account/login/',
             'data':{
@@ -101,22 +105,22 @@ Auth.prototype.listenSigninEvent= function(){
                 'remember':remember?1:0
             },
             'success':function (result) {
-                // if(result['code'] == 200){
-                //     self.hideEvent();
-                //     window.location.reload();
-                // }else {
-                //     var messageObject=result['message'];
-                //     if(typeof messageObject == 'string' || messageObject.constructor == String){
-                //         console.log(messageObject);
-                //     }else {
-                //         for(var key in messageObject){
-                //             var messages=messageObject[key];
-                //             var message= messages[0];
-                //             console.log(message);
-                //         }
-                //     }
-                // }
-                console.log(result)
+                if(result['code'] == 200){
+                    self.hideEvent();
+                    window.location.reload();
+                }else {
+                    var messageObject=result['message'];
+                    if(typeof messageObject == 'string' || messageObject.constructor == String){
+                        window.messageBox.show(messageObject);
+                    }else {
+                        for(var key in messageObject){
+                            var messages=messageObject[key];
+                            var message= messages[0];
+                            window.messageBox.show(message);
+                        }
+                    }
+
+                }
             },
             'fail':function (error) {
                 console.log(error);
