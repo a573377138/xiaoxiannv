@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05467793-1601-44a2-8157-be3d1385b33d" name="Default Changelist" comment="genxin3.5.17:54">
+    <list default="true" id="05467793-1601-44a2-8157-be3d1385b33d" name="Default Changelist" comment="genxin3.6.13:54">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/dist/css/shouye/index.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/dist/css/shouye/index.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/besecss/body.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/besecss/body.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/besecss/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/besecss/footer.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/css/shouye/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/shouye/index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/templates/news/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/news/index.html" afterDir="false" />
     </list>
@@ -26,21 +28,22 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/front/templates/news/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="569">
-                  <caret line="547" column="52" selection-start-line="547" selection-start-column="52" selection-end-line="547" selection-end-column="52" />
+                <state relative-caret-position="512">
+                  <caret line="746" column="37" lean-forward="true" selection-start-line="746" selection-start-column="37" selection-end-line="746" selection-end-column="37" />
                   <folding>
-                    <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#li#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#li#1;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#li#2;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#li#3;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#li#4;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#li#5;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#ul#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#a#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#a#0;n#li#2;n#ul#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -77,25 +80,37 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/front/src/css/besecss/footer.scss">
+            <entry file="file://$PROJECT_DIR$/front/src/css/shouye/index.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="37">
-                  <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+                  <caret line="293" column="64" selection-start-line="293" selection-start-column="64" selection-end-line="293" selection-end-column="64" />
+                  <folding>
+                    <element signature="e#435#2563#0" />
+                    <element signature="e#2650#3670#0" />
+                    <element signature="e#3695#7870#0" />
+                    <element signature="e#8754#8810#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/front/src/css/shouye/index.scss">
+            <entry file="file://$PROJECT_DIR$/front/src/css/besecss/body.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="304">
-                  <caret line="246" column="39" lean-forward="true" selection-start-line="246" selection-start-column="39" selection-end-line="246" selection-end-column="39" />
+                <state relative-caret-position="456">
+                  <caret line="100" column="22" lean-forward="true" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
                   <folding>
-                    <element signature="e#212#2573#0" />
-                    <element signature="e#2650#3670#0" />
-                    <element signature="e#3695#7870#0" />
-                    <element signature="e#8754#8810#0" />
+                    <element signature="e#295#2944#0" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/front/src/css/besecss/header.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-362">
+                  <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
                 </state>
               </provider>
             </entry>
@@ -149,13 +164,13 @@
         <option value="$PROJECT_DIR$/front/src/css/besecss/header.scss" />
         <option value="$PROJECT_DIR$/front/templates/news/detail.html" />
         <option value="$PROJECT_DIR$/front/src/css/shouye/detail.scss" />
-        <option value="$PROJECT_DIR$/front/src/css/besecss/body.scss" />
         <option value="$PROJECT_DIR$/front/src/css/besecss/auth.scss" />
         <option value="$PROJECT_DIR$/front/src/css/besecss/changliang.scss" />
         <option value="$PROJECT_DIR$/front/templates/auther.html" />
+        <option value="$PROJECT_DIR$/front/src/css/shouye/index.scss" />
         <option value="$PROJECT_DIR$/front/src/css/besecss/footer.scss" />
         <option value="$PROJECT_DIR$/front/templates/news/index.html" />
-        <option value="$PROJECT_DIR$/front/src/css/shouye/index.scss" />
+        <option value="$PROJECT_DIR$/front/src/css/besecss/body.scss" />
       </list>
     </option>
   </component>
@@ -384,7 +399,7 @@
       <workItem from="1551342897665" duration="4397000" />
       <workItem from="1551664153503" duration="13250000" />
       <workItem from="1551755074701" duration="18167000" />
-      <workItem from="1551834576176" duration="14133000" />
+      <workItem from="1551834576176" duration="16730000" />
     </task>
     <task id="LOCAL-00001" summary="ceshi">
       <created>1551336502815</created>
@@ -463,11 +478,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551779670222</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="genxin3.6.13:54">
+      <created>1551851826304</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1551851826304</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100683000" />
+    <option name="totallyTimeSpent" value="103280000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -521,7 +543,8 @@
     <MESSAGE value="genxin2" />
     <MESSAGE value="genxin2.5.16:47" />
     <MESSAGE value="genxin3.5.17:54" />
-    <option name="LAST_COMMIT_MESSAGE" value="genxin3.5.17:54" />
+    <MESSAGE value="genxin3.6.13:54" />
+    <option name="LAST_COMMIT_MESSAGE" value="genxin3.6.13:54" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/gulpfile.js" />
@@ -601,13 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/css/besecss/header.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xiaoxiannv/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -620,13 +636,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xiaoxiannv/settings.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/front/src/css/besecss/body.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front/src/js/auth.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -668,28 +677,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/front/src/css/besecss/footer.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        <state relative-caret-position="304">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#318#4176#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front/templates/news/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="547" column="52" selection-start-line="547" selection-start-column="52" selection-end-line="547" selection-end-column="52" />
+        <state relative-caret-position="512">
+          <caret line="746" column="37" lean-forward="true" selection-start-line="746" selection-start-column="37" selection-end-line="746" selection-end-column="37" />
           <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#li#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#li#1;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#li#2;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#li#3;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#li#4;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#li#5;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#ul#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#a#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#a#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#a#0;n#li#2;n#ul#0;n#div#1;n#div#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -720,15 +733,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/css/besecss/header.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-362">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/front/src/css/shouye/index.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="246" column="39" lean-forward="true" selection-start-line="246" selection-start-column="39" selection-end-line="246" selection-end-column="39" />
+        <state relative-caret-position="37">
+          <caret line="293" column="64" selection-start-line="293" selection-start-column="64" selection-end-line="293" selection-end-column="64" />
           <folding>
-            <element signature="e#212#2573#0" />
+            <element signature="e#435#2563#0" />
             <element signature="e#2650#3670#0" />
             <element signature="e#3695#7870#0" />
             <element signature="e#8754#8810#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/css/besecss/body.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="100" column="22" lean-forward="true" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
+          <folding>
+            <element signature="e#295#2944#0" />
           </folding>
         </state>
       </provider>

@@ -92,6 +92,20 @@ body{
                  }
             }
         }
+    .right-float{
+      width: 80px;
+      z-index: 999;
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      font-size: 15px;
+      text-align: center;
+      a{
+        .icon-fanhui{
+            font-size: 50px;
+        }
+      }
+    }
 
   }
 }

@@ -285,10 +285,15 @@
                                 }
                                 a{
                                     img{
-                                float: left;
-                                width: 90px;
-                                height: 90px;
-                                }
+                                        float: left;
+                                        width: 90px;
+                                        height: 90px;
+                                        border-radius: 10px;
+                                        transition: all 0.5s ease-in-out;
+                                        &:hover{
+                                            transform: scale(1.1);
+                                        }
+                                    }
                                     .detile-b{
                                         float: left;
                                         margin-left: 10px;

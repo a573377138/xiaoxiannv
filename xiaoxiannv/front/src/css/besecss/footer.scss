@@ -10,6 +10,7 @@
     //height: 1000px;
     //bottom:0;
     padding-top: 10px;
+    position: relative;
     .top-group{
         height: 75px;
         //padding-top: 10px;
@@ -17,7 +18,7 @@
             width: $pagewidth;
             margin: 0 auto;
             overflow: hidden;
-            position: relative;
+
             .log-box{
                 float: left;
                 width: 150px;
@@ -81,7 +82,7 @@
                                     background: url("https://www.xfz.cn/static/build/images/wxQr.jpg");
                                     background-size: 100%;
                                     position: absolute;
-                                    right: 360px;
+                                    right: 310px;
                                     top: -220px;
                                     display: none;
                                 }
