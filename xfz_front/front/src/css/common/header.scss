@@ -15,7 +15,8 @@
         width: $pageWidth;
         height: 100%;
         margin: 0 auto;
-        overflow: hidden;
+        //overflow: hidden;
+        position: relative;
 
 
         .logo-box{
@@ -68,11 +69,11 @@
                 color: #fff;
             }
             .user-more-box{
-                display: block;
+                display: none;
                 position: absolute;
                 z-index: 99999;
                 //left: -80px;
-                right: 20px;
+                right: 5px;
                 top: 65px;
                 font-size: 16px;
                 box-shadow: 0 3px 4px #ccc;

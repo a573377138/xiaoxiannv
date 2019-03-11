@@ -8,7 +8,7 @@
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'js/message.min.js' %}"></script>
     <script src="{% static 'js/xfzajax.min.js' %}"></script>
-    <script src="{% static 'js/auth.min.js' %}"></script>
+    <script src="{% static 'js/front_base.min.js' %}"></script>
     {% block head %}{% endblock %}
 
 </head>
@@ -128,7 +128,7 @@
                                     <input type="text" class="form-control" name="img_captcha" placeholder="图形验证码">
                                 </div>
                                 <div class="input-group-addon">
-                                    <img src="" alt="">
+                                    <img src="{% url 'xfzauth:img_captcha' %}" alt="" class="img-captcha">
                                 </div>
                             </div>
                             <div class="input-group">

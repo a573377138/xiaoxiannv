@@ -110,6 +110,9 @@
                             .input-group-addon{
                                 float: right;
                                 width: 100px;
+                                .imh-captcha{
+                                    cursor: pointer;
+                                }
                                 .sms-captcha-btn{
                                     width: 100%;
                                     height: 40px;
@@ -120,6 +123,10 @@
                                     line-height: 40px;
                                     box-sizing: border-box;
                                     cursor: pointer;
+                                }
+                                .disabled{
+                                    color: #cccccc;
+                                    border-color: #cccccc;
                                 }
                             }
                         }
