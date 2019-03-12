@@ -32,7 +32,9 @@
                     <a href="#" class="authenticated-box">{{ user.username }}</a>
                     <div class="user-more-box">
                         <i class="triangle"></i>
-                        <a href="#">管理系统</a>
+                        {% if user.is_staff %}
+                            <a href="{% url 'cms:index' %}">管理系统</a>
+                         {% endif %}
                         <a href="{% url 'xfzauth:logout' %}">退出登录</a>
                     </div>
                 {% else %}
@@ -132,10 +134,10 @@
                                 </div>
                             </div>
                             <div class="input-group">
-                                <input type="text" class="form-control" name="password1" placeholder="密码">
+                                <input type="password" class="form-control" name="password1" placeholder="密码">
                             </div>
                             <div class="input-group">
-                                <input type="text" class="form-control" name="password2" placeholder="确认密码">
+                                <input type="password" class="form-control" name="password2" placeholder="确认密码">
                             </div>
                             <div class="input-group">
                                 <div class="short-input-group">

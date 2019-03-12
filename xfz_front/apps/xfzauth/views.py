@@ -9,10 +9,10 @@ from utils.captcha.xfzcaptcha import Captcha
 from io import BytesIO
 from utils import smssender
 from django.core.cache import cache
-from .models import User
+from django.contrib.auth import get_user_model
 from .forms import RegisterForm
 
-
+User=get_user_model()
 @require_POST
 def login_view(request):
     form = LonginForm(request.POST)

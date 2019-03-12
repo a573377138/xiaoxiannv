@@ -155,22 +155,8 @@ Auth.prototype.listenSigninEvent= function(){
                 'remember':remember?1:0
             },
             'success':function (result) {
-                if(result['code'] == 200){
                     self.hideEvent();
                     window.location.reload();
-                }else {
-                    var messageObject=result['message'];
-                    if(typeof messageObject == 'string' || messageObject.constructor == String){
-                        window.messageBox.show(messageObject);
-                    }else {
-                        for(var key in messageObject){
-                            var messages=messageObject[key];
-                            var message= messages[0];
-                            window.messageBox.show(message);
-                        }
-                    }
-
-                }
             },
             'fail':function (error) {
                 console.log(error);
@@ -212,6 +198,11 @@ Auth.prototype.listenSignupEvent = function () {
             },
             'success': function (result) {
                 window.location.reload();
+            },
+            'fail':function (error) {
+                console.log(error);
+                window.messageBox.showError('服务器内部错误！')
+
             }
         });
     });

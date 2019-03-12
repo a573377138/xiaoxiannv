@@ -25,6 +25,26 @@ var xfzajax = {
         this.ajax(args);
     },
     'ajax': function (args) {
+        var success = args['success'];
+        args['success'] =function(result){
+            if(result['code']===200){
+                if(success){
+                    success(result);
+                }
+            }else {
+                var messageObject=result['message'];
+                if(typeof messageObject == 'string' || messageObject.constructor === String){
+                    window.messageBox.show(messageObject);
+                }else {
+                    for(var key in messageObject){
+                        var messages=messageObject[key];
+                        var message= messages[0];
+                        window.messageBox.show(message);
+                        }
+                    }
+            }
+        };
+
         $.ajax(args);
     },
     '_ajaxSetup': function () {
