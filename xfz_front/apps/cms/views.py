@@ -7,7 +7,7 @@ from utils import restful
 from .forms import EditNewsCategoryForm
 import os
 from django.conf import settings
-
+import qiniu
 
 
 
@@ -78,3 +78,14 @@ def upload_file(request):
             fp.write(chunk)
     url=request.build_absolute_uri(settings.MEDIA_URL+name)
     return restful.result(data={'url':url})
+
+@require_POST
+def qntoken(request):
+    access_key='rH44NiA-I5aggh_VeEVC13rqcaJzxXOreqKuM-Qh'
+    secret_key='8MZ7FHAbzC_9xVzvaHBXC2Ai6TByrGuShrSuPuoc'
+    bucket='xiao_xiannv'
+    q=qiniu.Auth(access_key,secret_key)
+
+    token=q.upload_token(bucket)
+
+    return restful.result(data={'token':token})
