@@ -34,17 +34,19 @@ var xfzajax = {
             }else {
                 var messageObject=result['message'];
                 if(typeof messageObject == 'string' || messageObject.constructor === String){
-                    window.messageBox.show(messageObject);
+                    window.messageBox.showError(messageObject);
                 }else {
                     for(var key in messageObject){
                         var messages=messageObject[key];
                         var message= messages[0];
-                        window.messageBox.show(message);
+                        window.messageBox.showError(message);
                         }
                     }
             }
+                if(success){
+                success(result);
+            }
         };
-
         $.ajax(args);
     },
     '_ajaxSetup': function () {
