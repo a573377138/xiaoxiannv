@@ -42,9 +42,9 @@ var xfzajax = {
                         window.messageBox.showError(message);
                         }
                     }
-            }
                 if(success){
                 success(result);
+                }
             }
         };
         $.ajax(args);

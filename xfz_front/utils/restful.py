@@ -13,7 +13,7 @@ def result(code=HttpCode.ok,message="",data =None,kwargs =None):
     if kwargs and  isinstance(kwargs,dict) and kwargs.keys():
         json_dict.update(kwargs)
     response =JsonResponse(json_dict)
-    response.set_cookie('repef','127.0.0.1')
+    # response.set_cookie('repef','127.0.0.1')
     return response
 
 def ok():
