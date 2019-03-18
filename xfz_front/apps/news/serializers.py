@@ -1,7 +1,7 @@
 #encoding: utf-8
 
 from rest_framework import serializers
-from .models import News,NewsCategory
+from .models import News,NewsCategory,Banner
 from apps.xfzauth.serializers import UserSerializer
 from .models import Comment
 class NewsCategorySerializer(serializers.ModelSerializer):
@@ -23,7 +23,7 @@ class CommentSerizlizer(serializers.ModelSerializer):
         model = Comment
         fields = ('id','content','author','pub_time')
 
-# class BannerSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Banner
-#         fields = ('id','image_url','priority','link_to')
+class BannerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Banner
+        fields = ('id','image_url','priority','link_to')

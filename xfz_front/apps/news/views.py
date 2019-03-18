@@ -1,20 +1,23 @@
 from django.shortcuts import render
-from .models import News,NewsCategory
+from .models import News,NewsCategory,Banner
 from django.conf import settings
 from .serializers import NewsSerializer,CommentSerizlizer
 from utils import restful
 from django.http import Http404
 from .forms import PublicCommentForm
 from .models import Comment
+from apps.xfzauth.decorators import xfz_login_required
 
 # Create your views here.
 def index(request):
     count = settings.ONE_PAGE_NEWS_COUNT
     newses = News.objects.select_related('category','author').all()[0:count]
     categories = NewsCategory.objects.all()
+    banners=Banner.objects.all()
     context = {
         'newses': newses,
-        'categories': categories
+        'categories': categories,
+        'banners':banners
     }
     return render(request,'news/index.html',context=context)
 
@@ -43,7 +46,7 @@ def news_list(request):
 
 def news_detail(request,news_id):
     try:
-        news =News.objects.select_related('category','author').get(pk=news_id)
+        news =News.objects.select_related('category','author').prefetch_related('comments__author').get(pk=news_id)
         context={
             'news':news
         }
@@ -53,6 +56,8 @@ def news_detail(request,news_id):
 def search(request):
     return render(request,'search/search.html')
 
+
+@xfz_login_required
 def public_comment(request):
     form= PublicCommentForm(request.POST)
     if form.is_valid():
