@@ -13,7 +13,7 @@ from apps.news.serializers import BannerSerializer
 from django.core.paginator import Paginator
 from datetime import datetime
 from django.utils.timezone import make_aware
-
+from urllib import parse
 @staff_member_required(login_url='index')
 def index(request):
     return  render(request,'cms/index.html')
@@ -153,26 +153,24 @@ def qntoken(request):
 
 class NewsListView(View):
     def get(self,request):
-        page=int(request.GET.get('p',1))
-        start=request.GET.get('start')
-        end =request.GET.get('end')
-        title= request.GET.get('title')
-        category_id=request.GET.get('category')
+        page = int(request.GET.get('p',1))
+        start = request.GET.get('start')
+        end = request.GET.get('end')
+        title = request.GET.get('title')
+        category_id = int(request.GET.get('category',0) or 0)
         newses = News.objects.select_related('category', 'author')
         if start or end:
             if start:
-                start_date = datetime.strptime(start,'%Y/%m/%d')
+                start_date=datetime.strptime(start,'%Y/%m/%d')
             else:
-                start_date = datetime(year=2018,month=6,day=1)
+                start_date=datetime(year=2019,month=2,day=20)
             if end:
-                end_date = datetime.strptime(end,'%Y/%m/%d')
+                end_date=datetime.strptime(end,'%Y/%m/%d')
             else:
                 end_date = datetime.today()
-            newses = newses.filter(pub_time__range=(make_aware(start_date),make_aware(end_date)))
-
+            newses=newses.filter(pub_time__range=(make_aware(start_date),make_aware(end_date)))
         if title:
-            newses = newses.filter(title__icontains=title)
-
+            newses=newses.filter(title__icontains=title)
         if category_id:
             newses = newses.filter(category=category_id)
 
@@ -187,7 +185,13 @@ class NewsListView(View):
             'start': start,
             'end': end,
             'title': title,
-            'category_id': category_id
+            'category_id': category_id,
+            'url_query':'&'+parse.urlencode({
+                'start':start or '',
+                'end':end or '',
+                'title':title or '',
+                'category_id':category_id or ''
+            })
         }
         context.update(context_data)
         return render(request, 'cms/news_list.html', context=context)
