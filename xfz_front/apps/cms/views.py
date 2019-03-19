@@ -10,8 +10,9 @@ from django.conf import settings
 import qiniu
 from .forms import WriteNewsForm
 from apps.news.serializers import BannerSerializer
-
-
+from django.core.paginator import Paginator
+from datetime import datetime
+from django.utils.timezone import make_aware
 
 @staff_member_required(login_url='index')
 def index(request):
@@ -150,4 +151,71 @@ def qntoken(request):
 
     return restful.result(data={'token':token})
 
+class NewsListView(View):
+    def get(self,request):
+        page=int(request.GET.get('p',1))
+        start=request.GET.get('start')
+        end =request.GET.get('end')
+        title= request.GET.get('title')
+        category_id=request.GET.get('category')
+        newses = News.objects.select_related('category', 'author')
+        if start or end:
+            if start:
+                start_date = datetime.strptime(start,'%Y/%m/%d')
+            else:
+                start_date = datetime(year=2018,month=6,day=1)
+            if end:
+                end_date = datetime.strptime(end,'%Y/%m/%d')
+            else:
+                end_date = datetime.today()
+            newses = newses.filter(pub_time__range=(make_aware(start_date),make_aware(end_date)))
 
+        if title:
+            newses = newses.filter(title__icontains=title)
+
+        if category_id:
+            newses = newses.filter(category=category_id)
+
+        paginator = Paginator(newses, 2)
+        page_obj = paginator.page(page)
+        context_data=self.get_pagination_data(paginator,page_obj)
+        context = {
+            'categories': NewsCategory.objects.all(),
+            'newses': page_obj.object_list,
+            'page_obj':page_obj,
+            'paginator':paginator,
+            'start': start,
+            'end': end,
+            'title': title,
+            'category_id': category_id
+        }
+        context.update(context_data)
+        return render(request, 'cms/news_list.html', context=context)
+
+    def get_pagination_data(self,paginator,page_obj,around_count=2):
+        current_page = page_obj.number
+        num_pages = paginator.num_pages
+
+        left_has_more = False
+        right_has_more = False
+
+        if current_page <= around_count + 2:
+            left_pages = range(1,current_page)
+        else:
+            left_has_more = True
+            left_pages = range(current_page-around_count,current_page)
+
+        if current_page >= num_pages - around_count - 1:
+            right_pages = range(current_page+1,num_pages+1)
+        else:
+            right_has_more = True
+            right_pages = range(current_page+1,current_page+around_count+1)
+
+        return {
+            'left_pages': left_pages,
+            'right_pages': right_pages,
+            'current_page': current_page,
+            'left_has_more': left_has_more,
+            'right_has_more': right_has_more,
+            'num_pages': num_pages
+        }
