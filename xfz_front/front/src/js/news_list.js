@@ -53,7 +53,7 @@ CMSNewsList.prototype.listenDeleteEvent = function () {
 
 CMSNewsList.prototype.run = function () {
     this.initDatePicker();
-    // this.listenDeleteEvent();
+    this.listenDeleteEvent();
 };
 
 $(function () {

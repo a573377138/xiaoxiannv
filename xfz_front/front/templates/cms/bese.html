@@ -24,7 +24,7 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
     <header class="main-header">
-        <a href="index2.html" class="logo">
+        <a href="{% url 'cms:index' %}" class="logo">
             <span class="logo-mini"><b>C</b>MS</span>
             <span class="logo-lg"><b>小饭桌</b>管理后台</span>
         </a>
@@ -90,7 +90,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{% url 'cms:writenews' %}">
+                    <a href="{% url 'cms:write_news' %}">
                         <i class="fa fa-edit"></i>
                         <span>发布新闻</span>
                     </a>
@@ -107,6 +107,19 @@
                         <span>轮播图</span>
                     </a>
                 </li>
+                <li class="header">课程管理</li>
+                <li><a href="{% url 'cms:pub_course' %}">
+                    <i class="fa fa-tv"></i>
+                    <span>发布课程</span>
+                </a></li>
+                <li><a href="{% url 'cms:course_category' %}">
+                    <i class="fa fa-object-group"></i>
+                    <span>课程分类</span>
+                </a></li>
+                <li><a href="{% url 'cms:pub_course' %}">
+                    <i class="fa fa-user"></i>
+                    <span>讲师管理</span>
+                </a></li>
             </ul>
         </section>
     </aside>

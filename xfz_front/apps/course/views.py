@@ -1,8 +1,16 @@
 #-*- coding: utf8 -*-
 from django.shortcuts import render
+from .models import Course
 
 def course_index(request):
-    return render(request,'course/course_index.html')
+    context={
+        'courses':Course.objects.all()
+    }
+    return render(request,'course/course_index.html',context=context)
 
 def course_detail(request,course_id):
-    return render(request,'course/course_detail.html')
+    course=Course.objects.get(pk=course_id)
+    context={
+        'curse':course
+    }
+    return render(request,'course/course_detail.html',context=context)

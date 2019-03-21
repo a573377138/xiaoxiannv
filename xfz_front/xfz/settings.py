@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'apps.ueditor',
     'rest_framework',
     'debug_toolbar',
+    'apps.course'
 ]
 
 MIDDLEWARE = [
