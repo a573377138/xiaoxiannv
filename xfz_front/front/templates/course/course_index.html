@@ -20,7 +20,7 @@
         </div>
         <div class="wrapper">
             <ul class="course-list">
-                {% for cours in courses %}
+                {% for course in courses %}
                     <li>
                         <a href="{% url 'course:course_detail' course_id=course.pk %}">
                             <div class="thumbnail-group">
