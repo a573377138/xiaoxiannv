@@ -2,7 +2,7 @@
 from django import forms
 from apps.forms import FormMixin
 from apps.news.models import News,Banner,NewsCategory
-from apps.course.models import Course
+from apps.course.models import Course,Teacher
 
 class EditNewsCategoryForm(forms.Form,FormMixin):
     pk=forms.IntegerField(error_messages={'required':'必须传入分类ID！'})
@@ -37,4 +37,9 @@ class PubCourseForm(forms.ModelForm,FormMixin):
     teacher_id = forms.IntegerField()
     class Meta:
         model = Course
-        exclude = ("category",'teacher')
+        exclude = ["category",'teacher']
+
+class CourseTeacher(forms.ModelForm,FormMixin):
+    class Meta:
+        model=Teacher
+        fields=['username','avatar','jobtitle','profile']

@@ -1,0 +1,42 @@
+{% extends 'cms/bese.html' %}
+{% block title %}
+    讲师管理
+{% endblock %}
+{% block head %}
+    <script src="{% static 'js/teacher_list.min.js' %}"></script>
+{% endblock %}
+{% block content-header %}
+    <h1>讲师管理</h1>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-10">
+            <div class="box box-primary">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>讲师</th>
+                            <th>课程数量</th>
+                            <th>职位</th>
+                            <th>个人签名</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for teacher in teachers %}
+                        <tr data-pk="{{ teacher.pk }}">
+                            <td>{{ teacher.username }}</td>
+                            <td>{{ teacher.count }}</td>
+                            <td>{{ teacher.jobtitle }}</td>
+                            <td>{{ teacher.profile|safe }}</td>
+                            <td>
+                                <button class="btn btn-danger btn-xs delete-btn">删除</button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

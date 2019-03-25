@@ -35,7 +35,9 @@ PubCourse.prototype.listenSubmitEvent = function () {
 
             'success': function (result) {
                 if(result['code'] === 200){
-                    window.location = window.location.href;
+                    xfzalert.alertSuccess('课程发布成功！',function () {
+                        window.location = window.location.href;
+                    })
                 }
             }
         });

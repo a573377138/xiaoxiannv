@@ -30,4 +30,7 @@ urlpatterns += [
     path('add_course_category/',course_views.add_course_category,name='add_course_category'),
     path('edit_course_category/',course_views.edit_course_category,name='edit_course_category'),
     path('delete_course_category/',course_views.delete_course_category,name='delete_course_category'),
+    path('addcourse_teacher/',course_views.AddCourse_Teacher.as_view(),name='addcourse_teacher'),
+    path('teacher_list/',course_views.course_teacher_list,name='teacher_list'),
+    path('delete_teacher/',course_views.delete_teacher,name='delete_teacher')
 ]

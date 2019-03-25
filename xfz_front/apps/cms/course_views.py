@@ -1,6 +1,6 @@
 #encoding: utf-8
 from django.shortcuts import render
-from .forms import PubCourseForm
+from .forms import PubCourseForm,CourseTeacher
 from apps.course.models import Course,CourseCategory,Teacher
 from django.views.generic import View
 from utils import restful
@@ -8,6 +8,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import permission_required
 from django.views.decorators.http import require_POST,require_GET
 from django.db.models import F,Count
+
 @method_decorator(permission_required(perm="course.change_course",login_url='/'),name='dispatch')
 class PubCourse(View):
     def get(self,request):
@@ -73,3 +74,35 @@ def delete_course_category(request):
         return restful.ok()
     except:
         return restful.params_error(message='该分类不存在！')
+
+class AddCourse_Teacher(View):
+    def get(self,request):
+        return render(request,'cms/cource_teacher.html')
+
+    def post(self,request):
+        form=CourseTeacher(request.POST)
+        if form.is_valid():
+            username=form.cleaned_data.get('username')
+            avatar=form.cleaned_data.get('avatar')
+            jobtitle=form.cleaned_data.get('jobtitle')
+            profile=form.cleaned_data.get('profile')
+            Teacher.objects.create(username=username,avatar=avatar,jobtitle=jobtitle,profile=profile)
+            return restful.ok()
+        else:
+            return restful.params_error(message=form.get_errors())
+@require_GET
+def course_teacher_list(request):
+    teacher=Teacher.objects.annotate(count=Count('course'))
+    context={
+        'teachers':teacher
+    }
+    return render(request,'cms/teacher_list.html',context=context)
+@require_POST
+def delete_teacher(request):
+    pk = request.POST.get('pk')
+    print(pk)
+    try:
+        Teacher.objects.filter(pk=pk).delete()
+        return restful.ok()
+    except:
+        return restful.params_error(message='该讲师不存在！')
