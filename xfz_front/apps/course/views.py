@@ -16,9 +16,11 @@ def course_index(request):
     return render(request,'course/course_index.html',context=context)
 
 def course_detail(request,course_id):
-    course=Course.objects.get(pk=course_id)
-    context={
-        'course':course
+    course = Course.objects.get(pk=course_id)
+    buyed = CourseOrder.objects.filter(course=course,buyer=request.user,status=2).exists()
+    context = {
+        'course': course,
+        'buyed': buyed
     }
     return render(request,'course/course_detail.html',context=context)
 
@@ -26,8 +28,8 @@ def course_token(request):
     # video：是视频文件的完整链接
     file = request.GET.get('video')
     course_id = request.GET.get('course_id')
-    # if not CourseOrder.objects.filter(course_id=course_id,buyer=request.user,status=2).exists():
-    #     return restful.params_error(message='请先购买课程！')
+    if not CourseOrder.objects.filter(course_id=course_id,buyer=request.user,status=2).exists():
+        return restful.params_error(message='请先购买课程！')
 
     expiration_time = int(time.time()) + 2 * 60 * 60
 

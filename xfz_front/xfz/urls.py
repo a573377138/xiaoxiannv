@@ -17,7 +17,9 @@ from django.urls import path,include
 from apps.news import views
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib import admin
 urlpatterns = [
+    path('admin/',admin.site.urls,name='admin'),
     path('',views.index,name='index'),
     path('search/',views.search,name="search"),
     path('cms/',include('apps.cms.urls')),
@@ -25,6 +27,7 @@ urlpatterns = [
     path('account/', include("apps.xfzauth.urls")),
     path('course/',include("apps.course.urls")),
     path('ueditor/',include("apps.ueditor.urls")),
+    path('payinfo/',include("apps.payinfo.urls")),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
