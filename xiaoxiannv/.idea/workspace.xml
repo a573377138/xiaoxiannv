@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05467793-1601-44a2-8157-be3d1385b33d" name="Default Changelist" comment="genxin3.6.13:54">
-      <change afterPath="$PROJECT_DIR$/../xfz_front/apps/cms/staff_views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../xfz_front/apps/news/search_indexes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../xfz_front/apps/news/whoosh_cn_backend.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../xfz_front/apps/xfzauth/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../xfz_front/apps/xfzauth/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../xfz_front/apps/xfzauth/management/commands/initgroup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../xfz_front/front/templates/cms/add_staff.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../xfz_front/front/templates/cms/staff.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../xfz_front/front/templates/search/indexes/news/news_text.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../xfz_front/front/templates/search/search1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xfz_front/apps/cms/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../xfz_front/apps/cms/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xfz_front/apps/cms/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../xfz_front/apps/cms/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xfz_front/apps/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../xfz_front/apps/news/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xfz_front/apps/xfzauth/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/../xfz_front/apps/xfzauth/decorators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../xfz_front/front/dist/js/front_base.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../xfz_front/front/dist/js/front_base.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../xfz_front/front/src/js/front_base.js" beforeDir="false" afterPath="$PROJECT_DIR$/../xfz_front/front/src/js/front_base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xfz_front/front/templates/bese/front_bese.html" beforeDir="false" afterPath="$PROJECT_DIR$/../xfz_front/front/templates/bese/front_bese.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xfz_front/front/templates/cms/bese.html" beforeDir="false" afterPath="$PROJECT_DIR$/../xfz_front/front/templates/cms/bese.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xfz_front/front/templates/search/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/../xfz_front/front/templates/search/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xfz_front/xfz/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../xfz_front/xfz/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xfz_front/xfz/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../xfz_front/xfz/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -482,7 +464,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1444563" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

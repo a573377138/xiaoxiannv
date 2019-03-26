@@ -5,6 +5,7 @@ function FrontBase() {
 FrontBase.prototype.run= function(){
     var self =this;
     self.listenAuehBoxHover();
+    self.handleNavStatus();
 };
 FrontBase.prototype.listenAuehBoxHover=function(){
     var authbox = $('.auth-box');
@@ -15,6 +16,28 @@ FrontBase.prototype.listenAuehBoxHover=function(){
       usermorebox.hide();
     });
 };
+
+FrontBase.prototype.handleNavStatus = function () {
+    // http://127.0.0.1:8000/payinfo/
+    var url = window.location.href;
+    var protocol = window.location.protocol;
+    var host = window.location.host;
+    // http: + // + 127.0.0.1:8000
+    var domain = protocol + '//' + host;
+    var path = url.replace(domain,'');
+    var navLis = $(".nav li");
+    navLis.each(function (index,element) {
+        // js => $(js对象)
+        var li = $(element);
+        var aTag = li.children("a");
+        var href = aTag.attr("href");
+        if(href === path){
+            li.addClass("active");
+            return false;
+        }
+    });
+};
+
 
 function Auth() {
     var self = this;
