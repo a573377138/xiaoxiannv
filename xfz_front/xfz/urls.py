@@ -21,7 +21,8 @@ from django.contrib import admin
 urlpatterns = [
     path('admin/',admin.site.urls,name='admin'),
     path('',views.index,name='index'),
-    path('search/',views.search,name="search"),
+    # path('search/',views.search,name="search"),
+    path('search/',include('haystack.urls')),
     path('cms/',include('apps.cms.urls')),
     path('news/', include("apps.news.urls")),
     path('account/', include("apps.xfzauth.urls")),

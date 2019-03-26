@@ -102,7 +102,7 @@ Auth.prototype.listenSmsCaptcha=function(){
                 'telephone':telephone
             },
             'success':function (result) {
-                if(result['code']==200){
+                if(result['code']===200){
                     self.smsSuccessEvent();
                 }
             },

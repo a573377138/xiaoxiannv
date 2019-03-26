@@ -15,11 +15,16 @@ from datetime import datetime
 from django.utils.timezone import make_aware
 from urllib import parse
 from django.db.models import F,Count
+from django.contrib.auth.decorators import permission_required
+from django.utils.decorators import method_decorator
+
+
+
 @staff_member_required(login_url='index')
 def index(request):
     return  render(request,'cms/index.html')
 
-
+@method_decorator(permission_required(perm='news.change_news',login_url='/'),name='dispatch')
 class Writenews(View):
     def get(self,request):
         categories = NewsCategory.objects.all()
@@ -41,7 +46,7 @@ class Writenews(View):
         else:
             return restful.params_error(message=form.get_errors())
 
-
+@method_decorator(permission_required(perm='news.change_news',login_url='/'),name='dispatch')
 class EditNews(View):
     def get(self,request):
         news_id=request.GET.get('news_id')
@@ -69,6 +74,7 @@ class EditNews(View):
 
 
 @require_POST
+@permission_required(perm="news.delete_news",login_url='/')
 def delete_news(request):
     news_id=request.POST.get('news_id')
     News.objects.filter(pk=news_id).delete()
@@ -76,6 +82,7 @@ def delete_news(request):
 
 
 @require_GET
+@permission_required(perm="news.add_newscategory",login_url='/')
 def news_category(request):
     # categories=NewsCategory.objects.all()
     categories=NewsCategory.objects.annotate(count=Count("news"))
@@ -88,6 +95,7 @@ def news_category(request):
 
 
 @require_POST
+@permission_required(perm="news.add_newscategory",login_url='/')
 def add_news_category(request):
     name = request.POST.get('name')
     exists = NewsCategory.objects.filter(name=name).exists()
@@ -98,6 +106,7 @@ def add_news_category(request):
         return restful.params_error(message='该分类已经存在！')
 
 @require_POST
+@permission_required(perm="news.change_newscategory",login_url='/')
 def edit_news_category(request):
     form=EditNewsCategoryForm(request.POST)
     if form.is_valid():
@@ -113,6 +122,7 @@ def edit_news_category(request):
 
 
 @require_POST
+@permission_required(perm="news.delete_newscategory",login_url='/')
 def delete_news_category(request):
     pk=request.POST.get('pk')
     try:
@@ -121,18 +131,18 @@ def delete_news_category(request):
     except:
         return restful.params_error(message='该分类不存在！')
 
-
+@permission_required(perm="news.add_banner",login_url='/')
 def banners(request):
     return render(request,'cms/banners.html')
 
 
-
+@permission_required(perm="news.add_banner",login_url='/')
 def banner_list(request):
     banners = Banner.objects.all()
     serialize = BannerSerializer(banners,many=True)
     return restful.result(data=serialize.data)
 
-
+@permission_required(perm="news.add_banner",login_url='/')
 def add_banner(request):
     form = AddBannerForm(request.POST)
     if form.is_valid():
@@ -144,14 +154,14 @@ def add_banner(request):
     else:
         return restful.params_error(message=form.get_errors())
 
-
+@permission_required(perm="news.delete_banner",login_url='/')
 def delete_banner(request):
     banner_id = request.POST.get('banner_id')
     Banner.objects.filter(pk=banner_id).delete()
     return restful.ok()
 
 
-
+@permission_required(perm="news.change_banner",login_url='/')
 def edit_banner(request):
     form = EditBannerForm(request.POST)
     if form.is_valid():
@@ -165,6 +175,7 @@ def edit_banner(request):
         return restful.params_error(message=form.get_errors())
 
 @require_POST
+@staff_member_required(login_url='index')
 def upload_file(request):
     file=request.FILES.get('file')
     name=file.name
@@ -175,6 +186,7 @@ def upload_file(request):
     return restful.result(data={'url':url})
 
 @require_GET
+@staff_member_required(login_url='index')
 def qntoken(request):
     access_key='rH44NiA-I5aggh_VeEVC13rqcaJzxXOreqKuM-Qh'
     secret_key='8MZ7FHAbzC_9xVzvaHBXC2Ai6TByrGuShrSuPuoc'
@@ -185,6 +197,7 @@ def qntoken(request):
 
     return restful.result(data={'token':token})
 
+@method_decorator(permission_required(perm='news.change_news',login_url='/'),name='dispatch')
 class NewsListView(View):
     def get(self,request):
         page = int(request.GET.get('p',1))

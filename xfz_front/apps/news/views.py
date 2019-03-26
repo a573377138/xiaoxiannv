@@ -7,6 +7,7 @@ from django.http import Http404
 from .forms import PublicCommentForm
 from .models import Comment
 from apps.xfzauth.decorators import xfz_login_required
+from django.db.models import Q
 
 # Create your views here.
 def index(request):
@@ -54,7 +55,12 @@ def news_detail(request,news_id):
     except:
         raise Http404
 def search(request):
-    return render(request,'search/search.html')
+    q=request.GET.get('q')
+    context={}
+    if q:
+        newses=News.objects.filter(Q(title__icontains=q)|Q(content__icontains=q))
+        context['newses']=newses
+    return render(request, 'search/search1.html', context=context)
 
 
 @xfz_login_required
